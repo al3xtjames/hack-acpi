@@ -1,6 +1,6 @@
 			Device (IGPU)
 			{
-				Name (_ADR, 0x00020000) // _ADR: Address
+				Name (_ADR, 0x00020000)  // _ADR: Address
 				OperationRegion (IGPH, PCI_Config, Zero, 0x40)
 				Field (IGPH, ByteAcc, NoLock, Preserve)
 				{
@@ -9,7 +9,7 @@
 				}
 
 #if CONFIG_ACPI_DSM_INJECTION == 1
-				Name (IGPP, Package (0x0D) // IGPU primary device properties
+				Name (IGPP, Package (0x0D)  // IGPU primary device properties
 				{
 					0x0112,
 					0x0122,
@@ -65,7 +65,7 @@
 					}
 				})
 
-				Name (IGSP, Package (0x13) // IGPU secondary device properties
+				Name (IGSP, Package (0x13)  // IGPU secondary device properties
 				{
 					0x0102,
 					Zero,
@@ -131,7 +131,7 @@
 					}
 				})
 
-				Method (_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
+				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
 					If (!Arg2)
 					{

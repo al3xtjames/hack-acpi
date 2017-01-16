@@ -75,7 +75,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170115)
 				Device (ETH0)
 				{
 					#include "src/panther_point/pci/pxsx.asl"
-					Method (_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
+					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 					{
 						If (!Arg2)
 						{
@@ -115,8 +115,8 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170115)
 			Notify (\_SB.PCI0.RP06, 0x02)
 			Notify (\_SB.PCI0.RP07, 0x02)
 			Notify (\_SB.PCI0.RP08, 0x02)
-			Notify (\_SB.PCI0.PEG0, 0x02) // Optional PEG0 notification
-			Notify (\_SB.PCI0.PEG1, 0x02) // Optional PEG1 notification
+			Notify (\_SB.PCI0.PEG0, 0x02)  // Optional PEG0 notification
+			Notify (\_SB.PCI0.PEG1, 0x02)  // Optional PEG1 notification
 		}
 
 		Method (_L1A, 0, NotSerialized)	// _Lxx: Level-Triggered GPE

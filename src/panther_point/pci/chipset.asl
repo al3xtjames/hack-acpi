@@ -1,9 +1,9 @@
-			Name (_ADR, Zero) // _ADR: Address
-			Name (_UID, Zero) // _UID: Unique ID
-			Name (_BBN, Zero) // _BBN: BIOS Bus Number
-			Name (_CID, EisaId ("PNP0A03")) // _CID: Compatible ID
-			Name (_HID, EisaId ("PNP0A08")) // _HID: Hardware ID
-			Name (_CRS, ResourceTemplate () // _CRS: Current Resource Settings
+			Name (_ADR, Zero)  // _ADR: Address
+			Name (_UID, Zero)  // _UID: Unique ID
+			Name (_BBN, Zero)  // _BBN: BIOS Bus Number
+			Name (_CID, EisaId ("PNP0A03"))  // _CID: Compatible ID
+			Name (_HID, EisaId ("PNP0A08"))  // _HID: Hardware ID
+			Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 			{
 				IO (Decode16, 0x0CF8, 0x0CF8, 0x01, 0x08, )
 				WordBusNumber (ResourceProducer, MinFixed, MaxFixed, PosDecode, 0x0000, 0x0000, 0x003E, 0x0000, 0x003F,,, )
@@ -75,8 +75,8 @@
 			Device (PDRC)
 			{
 				Name (_HID, EisaId ("PNP0C02"))	// _HID: Hardware ID
-				Name (_UID, One) // _UID: Unique ID
-				Name (_CRS, ResourceTemplate () // _CRS: Current Resource Settings
+				Name (_UID, One)  // _UID: Unique ID
+				Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 				{
 					Memory32Fixed (ReadWrite, 0x00000000, 0x00004000, )
 					Memory32Fixed (ReadWrite, 0x00000000, 0x00008000, )

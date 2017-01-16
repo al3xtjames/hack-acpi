@@ -1,4 +1,4 @@
-		Device (MEM2) // Optionally, required when the IGPU is enabled in the BIOS
+		Device (MEM2)  // Optionally, required when the IGPU is enabled in the BIOS
 		{
 			Name (_HID, EisaId ("PNP0C01"))
 			Name (_UID, 0x02)

@@ -1,5 +1,5 @@
-				Name (_ADR, 0x001C0006) // _ADR: Address
-				Name (_PRT, Package (0x04) // _PRT: PCI Routing Table (AR0E)
+				Name (_ADR, 0x001C0006)  // _ADR: Address
+				Name (_PRT, Package (0x04)  // _PRT: PCI Routing Table (AR0E)
 				{
 					Package (0x04) { 0xFFFF, Zero, Zero, 0x12 },
 					Package (0x04) { 0xFFFF,  One, Zero, 0x13 },

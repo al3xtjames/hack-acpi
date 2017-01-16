@@ -3,7 +3,7 @@
 				Name (_ADR, 0x00160000)
 #if CONFIG_ACPI_DSM_INJECTION == 1
 #if CONFIG_GRAPHICS_IGPU_SUPPORT == 1
-				Method (_DSM, 4, NotSerialized) // _DSM: Device-Specific Method
+				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 				{
 					If (!Arg2)
 					{
