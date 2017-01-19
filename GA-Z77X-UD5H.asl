@@ -14,10 +14,12 @@
 #define CONFIG_PCI_FIREWIRE_ADDRESS            0x06010000
 #define CONFIG_PCI_FIREWIRE_DEVICE             \_SB.PCI0.RP06.FWBR.FRWR
 #define CONFIG_PCI_FIREWIRE_PORTS              0x02
+#define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-2"
+#define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-5"
 
 #define CONFIG_USB_CURRENT_DESKTOP             0x01
 
-DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170115)
+DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 {
 	#include "src/panther_point/operation_regions.asl"
 	#include "src/common/cpu.asl"
