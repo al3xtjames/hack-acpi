@@ -34,7 +34,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170131)
 			Device (RP01)
 			{
 				#include "src/panther_point/pci/rp01.asl"
-				#include "src/panther_point/pci/pxsx.asl"
+				#include "src/panther_point/pci/thunderbolt.asl"
 			}
 
 			Device (RP02)
