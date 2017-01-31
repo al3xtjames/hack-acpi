@@ -26,7 +26,7 @@
 				DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite, 0x00000000, 0xBFA00000, 0xFEAFFFFF, 0x00000000, 0x3F100000,,,, AddressRangeMemory, TypeStatic)
 			})
 
-			Name (_PRT, Package ()	// _PRT: PCI Routing Table (AR00)
+			Name (_PRT, Package ()  // _PRT: PCI Routing Table (AR00)
 			{
 				Package (0x04) { 0x001FFFFF, Zero, Zero, 0x15 },
 				Package (0x04) { 0x001FFFFF,  One, Zero, 0x13 },
@@ -61,7 +61,7 @@
 				Package (0x04) { 0x0006FFFF, 0x02, Zero, 0x11 },
 				Package (0x04) { 0x0006FFFF, 0x03, Zero, 0x12 },
 #if CONFIG_GRAPHICS_IGPU_SUPPORT == 1
-				Package (0x04) { 0x0002FFFF, Zero, Zero, 0x10 }, // IGPU 
+				Package (0x04) { 0x0002FFFF, Zero, Zero, 0x10 }, // IGPU
 #endif
 				Package (0x04) { 0x0004FFFF, Zero, Zero, 0x10 },
 				Package (0x04) { 0x0004FFFF,  One, Zero, 0x11 },
@@ -74,7 +74,7 @@
 
 			Device (PDRC)
 			{
-				Name (_HID, EisaId ("PNP0C02"))	// _HID: Hardware ID
+				Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
 				Name (_UID, One)  // _UID: Unique ID
 				Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 				{
