@@ -77,6 +77,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 				Device (ETH0)
 				{
 					#include "src/panther_point/pci/pxsx.asl"
+#if CONFIG_ACPI_DSM_INJECTION == 1
 					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 					{
 						If (!Arg2)
@@ -90,6 +91,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 							Buffer (0x02) { "1" }
 						})
 					}
+#endif
 				}
 			}
 
