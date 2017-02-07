@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # mount_efi.sh
 
+export LC_ALL=C
+
 function printError()
 {
 	string="${COLOR_RED}${STYLE_BOLD}ERROR: ${STYLE_RESET}${STYLE_BOLD}$1${STYLE_RESET} Exiting..."

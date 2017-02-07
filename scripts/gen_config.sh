@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # gen_config.sh
 
+export LC_ALL=C
+
 if [[ ! -e config.asl ]]; then
 	cp config_orig.asl config.asl
 fi
