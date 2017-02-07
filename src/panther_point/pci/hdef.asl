@@ -11,24 +11,15 @@
 						Return (Buffer (One) { 0x03 })
 					}
 
-					// Enable Intel HDMI audio if IGPU is primary
-#if CONFIG_PCI_EXPRESS_GRAPHICS == 2
-					If ((^^PEG0.GFX0.VID == 0x8086) && (^^PEG1.GFX1.VID == 0x8086))
-#else
-					If (^^PEG0.GFX0.VID == 0x8086)
-#endif
+					// Enable Intel HDMI audio
+					Return (Package (0x02)
 					{
-						Return (Package (0x02)
+						"hda-gfx",
+						Buffer (0x0A)
 						{
-							"hda-gfx",
-							Buffer (0x0A)
-							{
-								"onboard-1"
-							}
-						})
-					}
-
-					Return (Package (Zero) {})
+							"onboard-1"
+						}
+					})
 				}
 #endif
 #endif

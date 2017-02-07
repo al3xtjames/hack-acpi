@@ -52,7 +52,7 @@
 							"@5,connector-type",
 							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
 							"hda-gfx",
-							Buffer (0x0A) { "onboard-1" }
+							Buffer (0x0A) { "onboard-2" }
 						})
 					}
 #endif
@@ -72,7 +72,7 @@
 						Return (Package (0x02)
 						{
 							"hda-gfx",
-							Buffer (0x0A) { "onboard-1" }
+							Buffer (0x0A) { "onboard-2" }
 						})
 					}
 #endif
@@ -134,7 +134,7 @@
 							"@5,connector-type",
 							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
 							"hda-gfx",
-							Buffer (0x0A) { "onboard-2" }
+							Buffer (0x0A) { "onboard-3" }
 						})
 					}
 #endif
@@ -154,7 +154,7 @@
 						Return (Package (0x02)
 						{
 							"hda-gfx",
-							Buffer (0x0A) { "onboard-2" }
+							Buffer (0x0A) { "onboard-3" }
 						})
 					}
 #endif
