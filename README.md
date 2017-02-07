@@ -2,7 +2,10 @@
 Stripped DSDTs for running macOS on various motherboards.
 
 ### Supported motherboards
+ - Gigabyte GA-Z77X-D3H
+ - Gigabyte GA-Z77X-UD3H
  - Gigabyte GA-Z77X-UD5H
+ - Gigabyte GA-Z77X-UP5 TH *(Thunderbolt support WIP)*
 
 ### Usage
 Build a DSDT using `BOARD=target make`:
