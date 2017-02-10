@@ -11,7 +11,7 @@ Stripped DSDTs for running macOS on various motherboards.
 Build a DSDT using `BOARD=target make`:
 
 ```
-~/Projects/ACPI ❯❯❯ BOARD=GA-Z77X-UD5H make install
+hack-acpi ❯ BOARD=GA-Z77X-UD5H make install
 ./scripts/gen_config.sh
 iasl GA-Z77X-UD5H.asl
 
@@ -19,19 +19,16 @@ Intel ACPI Component Architecture
 ASL+ Optimizing Compiler version 20160930-64
 Copyright (c) 2000 - 2016 Intel Corporation
 
-src/panther_point/pci/imei.asl     23: age (Zero) {})
-Remark   2095 -                          Effective AML package length is zero ^
+src/panther_point/pci/imei.asl       23: Package (Zero) {})
+Remark   2095 - Effective AML package length is zero ^
 
-src/panther_point/pci/igpu.asl    166: age (Zero) {})
-Remark   2095 -                          Effective AML package length is zero ^
+src/panther_point/pci/igpu.asl       83: Package (Zero) {})
+Remark   2095 - Effective AML package length is zero ^
 
-src/panther_point/pci/hdef.asl     31: age (Zero) {})
-Remark   2095 -                          Effective AML package length is zero ^
+ASL Input:     GA-Z77X-UD5H.asl - 135 lines, 2916 bytes, 389 keywords
+AML Output:    DSDT.aml - 6319 bytes, 286 named objects, 103 executable opcodes
 
-ASL Input:     GA-Z77X-UD5H.asl - 131 lines, 2757 bytes, 397 keywords
-AML Output:    DSDT.aml - 6790 bytes, 283 named objects, 114 executable opcodes
-
-Compilation complete. 0 Errors, 0 Warnings, 3 Remarks, 4 Optimizations
+Compilation complete. 0 Errors, 0 Warnings, 2 Remarks, 4 Optimizations
 cp DSDT.aml "/Volumes/EFI/EFI/CLOVER/ACPI/patched/DSDT.aml"
 ```
 
