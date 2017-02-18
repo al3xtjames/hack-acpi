@@ -6,7 +6,7 @@
 	Method (_PTS, 1, NotSerialized)	// _PTS: Prepare To Sleep
 	{
 		// Reboot after shutdown fix
-		If ((Arg0) && (Arg0 != 0x05))
+		If (Arg0 && Arg0 != 0x05)
 		{
 			\_SB.PCI0.LPCB.SPTS ()
 		}
@@ -18,7 +18,7 @@
 
 		Return (Package (0x02)
 		{
-			Zero, 
+			Zero,
 			Zero
 		})
 	}

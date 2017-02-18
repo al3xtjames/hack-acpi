@@ -1,15 +1,19 @@
 # Makefile for hack-acpi
 
-IASL=iasl
-EFI_MOUNT=$(shell scripts/mount_efi.sh)
+EFI_MOUNT := $(shell tools/mount_efi.sh)
+OS := $(shell uname)
 
-all : $(BOARD).asl
-	./scripts/gen_config.sh
-	$(IASL) $<
+ifeq ($(OS), Darwin)
+	IASL := tools/iasl_darwin
+endif
+
+all : src/board/$(BOARD).asl
+	./tools/gen_config.sh
+	$(IASL) -I . -I src -p out/DSDT.aml $<
 
 .PHONY: install
 install : all
-	cp DSDT.aml "$(EFI_MOUNT)/EFI/CLOVER/ACPI/patched/DSDT.aml"
+	cp out/DSDT.aml "$(EFI_MOUNT)/EFI/CLOVER/ACPI/patched/DSDT.aml"
 
 .PHONY: cleanall
 cleanall : clean
@@ -17,4 +21,4 @@ cleanall : clean
 
 .PHONY: clean
 clean :
-	$(RM) DSDT.aml
+	$(RM) out/DSDT.aml

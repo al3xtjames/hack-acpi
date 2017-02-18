@@ -1,7 +1,7 @@
 /* Minimal DSDT for Gigabyte GA-Z77X-UD5H */
 
 // User ACPI configuration
-#include "config.asl"
+#include <config.asl>
 
 // Motherboard ACPI configuration - do not edit!
 #define CONFIG_CHIPSET_INTEL_LAN_DEVICE        \_SB.PCI0.ETH1
@@ -21,62 +21,62 @@
 
 DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 {
-	#include "src/panther_point/operation_regions.asl"
-	#include "src/common/cpu.asl"
+	#include <panther_point/operation_regions.asl>
+	#include <common/cpu.asl>
 
 	Scope (\_SB)
 	{
-		#include "src/panther_point/mem2.asl"
+		#include <panther_point/mem2.asl>
 
 		Device (PCI0)
 		{
-			#include "src/panther_point/pci/chipset.asl"
+			#include <panther_point/pci/chipset.asl>
 
 			Device (RP01)
 			{
-				#include "src/panther_point/pci/rp01.asl"
+				#include <panther_point/pci/rp01.asl>
 			}
 
 			Device (RP02)
 			{
-				#include "src/panther_point/pci/rp02.asl"
+				#include <panther_point/pci/rp02.asl>
 				Device (SATA)
 				{
-					#include "src/panther_point/pci/pxsx.asl"
+					#include <panther_point/pci/pxsx.asl>
 				}
 			}
 
 			Device (RP03)
 			{
-				#include "src/panther_point/pci/rp03.asl"
+				#include <panther_point/pci/rp03.asl>
 			}
 
 			Device (RP04)
 			{
-				#include "src/panther_point/pci/rp04.asl"
+				#include <panther_point/pci/rp04.asl>
 			}
 
 			Device (RP05)
 			{
-				#include "src/panther_point/pci/rp05.asl"
+				#include <panther_point/pci/rp05.asl>
 				Device (ARPT)
 				{
-					#include "src/panther_point/pci/pxsx.asl"
+					#include <panther_point/pci/pxsx.asl>
 				}
 			}
 
 			Device (RP06)
 			{
-				#include "src/panther_point/pci/rp06.asl"
-				#include "src/common/pci/firewire.asl"
+				#include <panther_point/pci/rp06.asl>
+				#include <common/pci/firewire.asl>
 			}
 
 			Device (RP07)
 			{
-				#include "src/panther_point/pci/rp07.asl"
+				#include <panther_point/pci/rp07.asl>
 				Device (ETH0)
 				{
-					#include "src/panther_point/pci/pxsx.asl"
+					#include <panther_point/pci/pxsx.asl>
 #if CONFIG_ACPI_DSM_INJECTION == 1
 					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 					{
@@ -97,23 +97,23 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 
 			Device (RP08)
 			{
-				#include "src/panther_point/pci/rp08.asl"
+				#include <panther_point/pci/rp08.asl>
 				Device (SATA)
 				{
-					#include "src/panther_point/pci/pxsx.asl"
+					#include <panther_point/pci/pxsx.asl>
 				}
 			}
 		}
 
 #if CONFIG_ACPI_IMAC_DEVICES == 1
-		#include "src/panther_point/pnlf.asl"
+		#include <panther_point/pnlf.asl>
 #endif
-		#include "src/common/pwrb.asl"
+		#include <common/pwrb.asl>
 	}
 
 	Scope (\_GPE)
 	{
-		#include "src/panther_point/gpe.asl"
+		#include <panther_point/gpe.asl>
 
 		Method (_L09, 0, NotSerialized)	 // _Lxx: Level-Triggered GPE
 		{
@@ -132,5 +132,5 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 		}
 	}
 
-	#include "src/common/sleep.asl"
+	#include <common/sleep.asl>
 }

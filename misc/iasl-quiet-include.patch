@@ -1,0 +1,24 @@
+diff --git a/source/compiler/aslfiles.c b/source/compiler/aslfiles.c
+index ea9ba5484..0c371276b 100644
+--- a/source/compiler/aslfiles.c
++++ b/source/compiler/aslfiles.c
+@@ -390,7 +390,6 @@ FlOpenIncludeWithPrefix (
+     IncludeFile = fopen (Pathname, "r");
+     if (!IncludeFile)
+     {
+-        fprintf (stderr, "Could not open include file %s\n", Pathname);
+         ACPI_FREE (Pathname);
+         return (NULL);
+     }
+diff --git a/source/compiler/prutils.c b/source/compiler/prutils.c
+index 33acec5c5..27110023c 100644
+--- a/source/compiler/prutils.c
++++ b/source/compiler/prutils.c
+@@ -421,7 +421,6 @@ PrOpenIncludeWithPrefix (
+     IncludeFile = fopen (Pathname, OpenMode);
+     if (!IncludeFile)
+     {
+-        fprintf (stderr, "Could not open include file %s\n", Pathname);
+         return (NULL);
+     }
+ 

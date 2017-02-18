@@ -102,26 +102,26 @@
 				0x0D, 0x04
 			})
 
-			#include "src/panther_point/pci/mchc.asl"
-			#include "src/panther_point/pci/imei.asl"
+			#include <panther_point/pci/mchc.asl>
+			#include <panther_point/pci/imei.asl>
 #if CONFIG_GRAPHICS_IGPU_SUPPORT == 1
-			#include "src/panther_point/pci/igpu.asl"
+			#include <panther_point/pci/igpu.asl>
 #endif
 
 #if CONFIG_GRAPHICS_PCIE_SUPPORT > 0
-			#include "src/panther_point/pci/peg.asl"
+			#include <panther_point/pci/peg.asl>
 #endif
 
-			#include "src/panther_point/pci/ehci.asl"
+			#include <panther_point/pci/ehci.asl>
 #ifdef CONFIG_CHIPSET_INTEL_XHC_DEVICE
-			#include "src/panther_point/pci/xhci.asl"
+			#include <panther_point/pci/xhci.asl>
 #endif
-			#include "src/panther_point/pci/hdef.asl"
+			#include <panther_point/pci/hdef.asl>
 
 #ifdef CONFIG_CHIPSET_INTEL_LAN_DEVICE
-			#include "src/panther_point/pci/intel_lan.asl"
+			#include <panther_point/pci/intel_lan.asl>
 #endif
 
-			#include "src/panther_point/pci/sata.asl"
-			#include "src/panther_point/lpcb.asl"
-			#include "src/panther_point/sbus.asl"
+			#include <panther_point/pci/sata.asl>
+			#include <panther_point/lpcb.asl>
+			#include <panther_point/sbus.asl>
