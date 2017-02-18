@@ -9,3 +9,5 @@
 // The GNVS SystemMemory address. Can be found in a dump of your DSDT.
 #define CONFIG_ACPI_GNVS_ADDRESS   0xDEADBEEF
 
+// Enable or disable the creation of certain ACPI devices found on iMacs.
+#define CONFIG_ACPI_IMAC_DEVICES   0x01

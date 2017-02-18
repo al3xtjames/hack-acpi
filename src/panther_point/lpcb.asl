@@ -32,6 +32,15 @@
 					}
 				}
 
+#if CONFIG_ACPI_IMAC_DEVICES == 1
+				Device (ALS0)
+				{
+					Name (_CID, "smc-als")  // _CID: Compatible ID
+					Name (_HID, "ACPI0008")  // _HID: Hardware ID
+					Name (_STA, 0x0F)  // _STA: Status
+				}
+#endif
+
 				Device (DMAC)
 				{
 					Name (_HID, EisaId ("PNP0200"))	// _HID: Hardware ID

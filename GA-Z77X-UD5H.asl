@@ -105,6 +105,9 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 			}
 		}
 
+#if CONFIG_ACPI_IMAC_DEVICES == 1
+		#include "src/panther_point/pnlf.asl"
+#endif
 		#include "src/common/pwrb.asl"
 	}
 
