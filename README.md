@@ -12,12 +12,12 @@ Build a DSDT using `BOARD=target make`:
 
 ```
 hack-acpi ❯ BOARD=GA-Z77X-UD5H make install
-./scripts/gen_config.sh
-iasl GA-Z77X-UD5H.asl
+./tools/gen_config.sh
+tools/iasl_darwin -I . -I src -p out/DSDT.aml src/board/GA-Z77X-UD5H.asl
 
 Intel ACPI Component Architecture
-ASL+ Optimizing Compiler version 20160930-64
-Copyright (c) 2000 - 2016 Intel Corporation
+ASL+ Optimizing Compiler/Disassembler version 20170119
+Copyright (c) 2000 - 2017 Intel Corporation
 
 src/panther_point/pci/imei.asl       23: Package (Zero) {})
 Remark   2095 - Effective AML package length is zero ^
@@ -25,8 +25,8 @@ Remark   2095 - Effective AML package length is zero ^
 src/panther_point/pci/igpu.asl       83: Package (Zero) {})
 Remark   2095 - Effective AML package length is zero ^
 
-ASL Input:     GA-Z77X-UD5H.asl - 135 lines, 2916 bytes, 389 keywords
-AML Output:    DSDT.aml - 6319 bytes, 286 named objects, 103 executable opcodes
+ASL Input:     src/board/GA-Z77X-UD5H.asl - 138 lines, 2913 bytes, 413 keywords
+AML Output:    out/DSDT.aml - 6555 bytes, 302 named objects, 111 executable opcodes
 
 Compilation complete. 0 Errors, 0 Warnings, 2 Remarks, 4 Optimizations
 cp DSDT.aml "/Volumes/EFI/EFI/CLOVER/ACPI/patched/DSDT.aml"
