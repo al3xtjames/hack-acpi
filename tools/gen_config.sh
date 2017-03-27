@@ -6,7 +6,7 @@ export LC_ALL=C
 BDMESG=$(which bdmesg)
 
 if [[ ! -e config.asl ]]; then
-	cp config_orig.asl config.asl
+	cp misc/default_config.asl config.asl
 fi
 
 if [ -f "$BDMESG" ]; then

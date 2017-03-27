@@ -11,9 +11,9 @@ Stripped DSDTs for running macOS on various motherboards.
 Build a DSDT using `BOARD=target make`:
 
 ```
-hack-acpi ❯ BOARD=GA-Z77X-UD5H make install
+hack-acpi ❯ BOARD=Gigabyte/GA-Z77X-UD5H make install
 ./tools/gen_config.sh
-tools/iasl_darwin -I . -I src -p out/DSDT.aml src/board/GA-Z77X-UD5H.asl
+tools/iasl_darwin -I . -I src -p out/DSDT.aml src/board/Gigabyte/GA-Z77X-UD5H.asl
 
 Intel ACPI Component Architecture
 ASL+ Optimizing Compiler/Disassembler version 20170119

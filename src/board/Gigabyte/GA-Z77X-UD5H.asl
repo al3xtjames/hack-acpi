@@ -115,7 +115,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170119)
 	{
 		#include <panther_point/gpe.asl>
 
-		Method (_L09, 0, NotSerialized)	 // _Lxx: Level-Triggered GPE
+		Method (_L09, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
 		{
 			Notify (\_SB.PCI0.RP02, 0x02)
 			Notify (\_SB.PCI0.RP05, 0x02)
