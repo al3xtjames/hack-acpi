@@ -3,21 +3,13 @@
 
 export LC_ALL=C
 
-function printError()
-{
-	string="${COLOR_RED}${STYLE_BOLD}ERROR: ${STYLE_RESET}${STYLE_BOLD}$1${STYLE_RESET} Exiting..."
-	printf "%s\n" "$string"
-
-	exit 1
-}
-
 # Mounts the EFI system partition for the currently-booted disk.
-function mountEFI()
+function mount_efi()
 {
-	# Find the BSD device name for the current OS disk
-	osVolume=$(df / | awk '/disk/ {print $1}')
+	# Find the BSD device name for the root volume
+	rootVolume=$(df / | awk '/disk/ {print $1}')
 
-	# Find the EFI partition of the disk from the OS disk
+	# Find the EFI partition on the boot drive
 	efiVolume=$(diskutil list "$osVolume" | awk '/EFI/ {print $6}')
 
 	# Make sure the EFI partition actually exists
@@ -29,19 +21,19 @@ function mountEFI()
 			recoveryVolume=$(diskutil info "$osVolume" | awk '/Recovery Disk:/ {print $3}')
 			efiVolume=$(diskutil list "$recoveryVolume" | awk '/EFI/ {print $6}')
 		else ## No CS volume present, so assume no EFI partition
-			printError "No EFI partition present on OS volume ($osVolume)!"
+			echo "No EFI partition present on OS volume ($osVolume)!" && exit 1
 		fi
 	fi
 
 	# Check if the EFI partition is already mounted; if not, mount it
 	if [ -z "$(mount | awk '/'"$efiVolume"'/ {print $1}')" ]; then
 		diskutil mount "$efiVolume" > /dev/null
-		export EFI_MOUNT=$(diskutil info "$efiVolume" | awk '/Mount Point/ {print $3}')
+		export EFI_MOUNT=$(diskutil info "$efiVolume" | grep 'Mount Point' | sed -e 's/   Mount Point:              //g')
 		echo "$EFI_MOUNT"
 	else
-		export EFI_MOUNT=$(diskutil info "$efiVolume" | awk '/Mount Point/ {print $3}')
+		export EFI_MOUNT=$(diskutil info "$efiVolume" | grep 'Mount Point' | sed -e 's/   Mount Point:              //g')
 		echo "$EFI_MOUNT"
 	fi
 }
 
-mountEFI
+mount_efi
