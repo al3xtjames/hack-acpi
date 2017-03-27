@@ -2,6 +2,7 @@
 Stripped DSDTs for running macOS on various motherboards.
 
 ### Supported motherboards
+ - ASUS P8Z77-V PRO/Thunderbolt *(Thunderbolt support WIP, untested)*
  - Gigabyte GA-Z77X-D3H
  - Gigabyte GA-Z77X-UD3H
  - Gigabyte GA-Z77X-UD5H
