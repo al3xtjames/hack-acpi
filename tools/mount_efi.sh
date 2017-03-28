@@ -7,21 +7,21 @@ export LC_ALL=C
 function mount_efi()
 {
 	# Find the BSD device name for the root volume
-	rootVolume=$(df / | awk '/disk/ {print $1}')
+	local rootVolume=$(df / | awk '/disk/ {print $1}')
 
 	# Find the EFI partition on the boot drive
-	efiVolume=$(diskutil list "$osVolume" | awk '/EFI/ {print $6}')
+	local efiVolume=$(diskutil list "$rootVolume" | awk '/EFI/ {print $6}')
 
 	# Make sure the EFI partition actually exists
 	if [ -z "$efiVolume" ]; then
-		## Check if the OS is installed on a Core Storage (CS) logical volume
-		csVolume=$(diskutil info "$osVolume" | grep "Core Storage")
+		## Check if the root volume is a Core Storage (CS) logical volume
+		local csVolume=$(diskutil info "$rootVolume" | grep "Core Storage")
 		if [ ! -z "$csVolume" ]; then ## CS volume detected
 			## We can find the recovery volume in the diskutil output, and then use that to find the EFI partition
-			recoveryVolume=$(diskutil info "$osVolume" | awk '/Recovery Disk:/ {print $3}')
-			efiVolume=$(diskutil list "$recoveryVolume" | awk '/EFI/ {print $6}')
+			local recoveryVolume=$(diskutil info "$rootVolume" | awk '/Recovery Disk:/ {print $3}')
+			local efiVolume=$(diskutil list "$recoveryVolume" | awk '/EFI/ {print $6}')
 		else ## No CS volume present, so assume no EFI partition
-			echo "No EFI partition present on OS volume ($osVolume)!" && exit 1
+			echo "No EFI partition present on root volume ($rootVolume)!" && exit 1
 		fi
 	fi
 
