@@ -5,8 +5,8 @@ export LC_ALL=C
 
 BDMESG=$(which bdmesg)
 
-if [[ ! -e config.asl ]]; then
-	cp misc/default_config.asl config.asl
+if [[ ! -e build/build_config.asl ]]; then
+	cp build/default_config.asl build/build_config.asl
 fi
 
 if [ -f "$BDMESG" ]; then
@@ -19,7 +19,7 @@ if [ -f "$BDMESG" ]; then
 	fi
 
 	if [[ $ACPI_GNVS_ADDRESS != "0x" ]]; then
-		sed -i '' "s/0xDEADBEEF/$ACPI_GNVS_ADDRESS/g" config.asl
+		sed -i '' "s/0xDEADBEEF/$ACPI_GNVS_ADDRESS/g" build/build_config.asl
 	fi
 else
 	echo "gen_config: bdmesg not found, using fallback GNVS address"

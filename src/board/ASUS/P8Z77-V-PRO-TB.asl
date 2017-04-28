@@ -1,9 +1,9 @@
 /* Minimal DSDT for ASUS P8Z77-V PRO/THUNDERBOLT */
 
-// User ACPI configuration
-#include <config.asl>
+// User ACPI build configuration
+#include <build_config.asl>
 
-// Motherboard ACPI configuration - do not edit!
+// Motherboard ACPI build configuration - do not edit!
 #define CONFIG_CHIPSET_INTEL_LAN_DEVICE        \_SB.PCI0.GIGE
 #define CONFIG_CHIPSET_INTEL_XHC_DEVICE        \_SB.PCI0.XHC1
 
@@ -15,12 +15,11 @@
 
 #define CONFIG_USB_CURRENT_DESKTOP             0x01
 
-DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170131)
+DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170421)
 {
 	#include <panther_point/operation_regions.asl>
-	#include <common/cpu.asl>
 
-	Scope (\_SB)
+	Scope (_SB)
 	{
 		#include <panther_point/mem2.asl>
 
@@ -102,7 +101,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170131)
 		#include <common/pwrb.asl>
 	}
 
-	Scope (\_GPE)
+	Scope (_GPE)
 	{
 		#include <panther_point/gpe.asl>
 
@@ -117,5 +116,6 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170131)
 		}
 	}
 
+	#include <panther_point/cpu.asl>
 	#include <common/sleep.asl>
 }

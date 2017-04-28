@@ -1,25 +1,24 @@
 /* Minimal DSDT for Gigabyte GA-Z77X-D3H/UD3H */
 
-// User ACPI configuration
-#include <config.asl>
+// User ACPI build configuration
+#include <build_config.asl>
 
-// Motherboard ACPI configuration - do not edit!
+// Motherboard ACPI build configuration - do not edit!
 #define CONFIG_CHIPSET_INTEL_XHC_DEVICE        \_SB.PCI0.XHC1
 
 #define CONFIG_GRAPHICS_IGPU_SUPPORT           0x01
 #define CONFIG_GRAPHICS_PCIE_SUPPORT           0x02
 
-#define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-2"
-#define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-5"
+#define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-1"
+#define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-4"
 
 #define CONFIG_USB_CURRENT_DESKTOP             0x01
 
-DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170206)
+DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170421)
 {
 	#include <panther_point/operation_regions.asl>
-	#include <common/cpu.asl>
 
-	Scope (\_SB)
+	Scope (_SB)
 	{
 		#include <panther_point/mem2.asl>
 
@@ -100,7 +99,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170206)
 		#include <common/pwrb.asl>
 	}
 
-	Scope (\_GPE)
+	Scope (_GPE)
 	{
 		#include <panther_point/gpe.asl>
 
@@ -114,5 +113,6 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170206)
 		}
 	}
 
+	#include <panther_point/cpu.asl>
 	#include <common/sleep.asl>
 }

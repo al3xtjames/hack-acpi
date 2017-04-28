@@ -1,3 +1,3 @@
 .DS_Store
 *.aml
-config.asl
+build/build_config.asl

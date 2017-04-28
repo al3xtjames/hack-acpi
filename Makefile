@@ -1,15 +1,17 @@
 # Makefile for hack-acpi
 
-EFI_MOUNT := $(shell tools/mount_efi.sh)
+EFI_MOUNT := $(shell build/tools/mount_efi.sh)
 OS := $(shell uname)
 
 ifeq ($(OS), Darwin)
-	IASL := tools/iasl_darwin
+	IASL := build/tools/iasl_darwin
 endif
 
+IASLFLAGS := -I build -I src -vo -p out/DSDT.aml
+
 all : src/board/$(BOARD).asl
-	./tools/gen_config.sh
-	$(IASL) -I . -I src -p out/DSDT.aml $<
+	./build/tools/gen_config.sh
+	$(IASL) $(IASLFLAGS) $<
 
 .PHONY: install
 install : all
@@ -17,7 +19,7 @@ install : all
 
 .PHONY: cleanall
 cleanall : clean
-	$(RM) config.asl
+	$(RM) build/build_config.asl
 
 .PHONY: clean
 clean :

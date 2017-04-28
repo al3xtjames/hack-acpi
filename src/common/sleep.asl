@@ -1,9 +1,9 @@
-	Method (_PIC, 1, NotSerialized)	// _PIC: Interrupt Model
+	Method (_PIC, 1, NotSerialized)  // _PIC: Interrupt Model
 	{
 		GPIC = Arg0
 	}
 
-	Method (_PTS, 1, NotSerialized)	// _PTS: Prepare To Sleep
+	Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
 	{
 		// Reboot after shutdown fix
 		If (Arg0 && Arg0 != 0x05)
@@ -12,15 +12,10 @@
 		}
 	}
 
-	Method (_WAK, 1, Serialized)	// _WAK: Wake
+	Method (_WAK, 1, Serialized)  // _WAK: Wake
 	{
 		\_SB.PCI0.LPCB.SWAK ()
-
-		Return (Package (0x02)
-		{
-			Zero,
-			Zero
-		})
+		Return (Package (0x02) { Zero, Zero })
 	}
 
 	Name (_S0, Package (0x04) { Zero, Zero, Zero, Zero })
