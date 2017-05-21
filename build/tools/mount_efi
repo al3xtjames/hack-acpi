@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # mount_efi.sh
 
+set -e
+set -u
+
 export LC_ALL=C
 
 # Mounts the EFI system partition for the currently-booted disk.

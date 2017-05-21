@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # gen_config
 
+set -e
+set -u
+
 export LC_ALL=C
 
 BDMESG=$(which bdmesg)

@@ -1,6 +1,6 @@
 # Makefile for hack-acpi
 
-EFI_MOUNT := $(shell build/tools/mount_efi.sh)
+EFI_MOUNT := $(shell build/tools/mount_efi)
 OS := $(shell uname)
 
 ifeq ($(OS), Darwin)
