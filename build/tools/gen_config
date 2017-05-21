@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# gen_config.sh
+# gen_config
 
 export LC_ALL=C
 
@@ -19,7 +19,7 @@ if [ -f "$BDMESG" ]; then
 	fi
 
 	if [[ $ACPI_GNVS_ADDRESS != "0x" ]]; then
-		sed -i '' "s/0xDEADBEEF/$ACPI_GNVS_ADDRESS/g" build/build_config.asl
+		sed -i '' "s/0xFFFF0000/$ACPI_GNVS_ADDRESS/g" build/build_config.asl
 	fi
 else
 	echo "gen_config: bdmesg not found, using fallback GNVS address"

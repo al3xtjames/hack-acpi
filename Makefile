@@ -10,7 +10,7 @@ endif
 IASLFLAGS := -I build -I src -vo -p out/DSDT.aml
 
 all : src/board/$(BOARD).asl
-	./build/tools/gen_config.sh
+	./build/tools/gen_config
 	$(IASL) $(IASLFLAGS) $<
 
 .PHONY: install
