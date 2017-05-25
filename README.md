@@ -13,23 +13,23 @@ Build a DSDT using `BOARD=target make`:
 
 ```
 hack-acpi ❯ BOARD=Gigabyte/GA-Z77X-UD5H make install
-./tools/gen_config.sh
-tools/iasl_darwin -I . -I src -p out/DSDT.aml src/board/Gigabyte/GA-Z77X-UD5H.asl
+./build/tools/gen_config
+build/tools/iasl_darwin -I build -I src -vo -p out/DSDT.aml src/board/Gigabyte/GA-Z77X-UD5H.asl
 
 Intel ACPI Component Architecture
 ASL+ Optimizing Compiler/Disassembler version 20170119
 Copyright (c) 2000 - 2017 Intel Corporation
 
-src/panther_point/pci/imei.asl       23: Package (Zero) {})
-Remark   2095 - Effective AML package length is zero ^
+src/panther_point/pci/imei.asl     23: age (Zero) {})
+Remark   2095 -                          Effective AML package length is zero ^
 
-src/panther_point/pci/igpu.asl       83: Package (Zero) {})
-Remark   2095 - Effective AML package length is zero ^
+src/panther_point/pci/intel_lan.asl      1: H1)
+Optimize 1075 -                                          NamePath optimized ^  (ETH1)
 
-ASL Input:     src/board/GA-Z77X-UD5H.asl - 138 lines, 2913 bytes, 413 keywords
-AML Output:    out/DSDT.aml - 6555 bytes, 302 named objects, 111 executable opcodes
+ASL Input:     src/board/Gigabyte/GA-Z77X-UD5H.asl - 138 lines, 2936 bytes, 374 keywords
+AML Output:    out/DSDT.aml - 5843 bytes, 282 named objects, 92 executable opcodes
 
-Compilation complete. 0 Errors, 0 Warnings, 2 Remarks, 4 Optimizations
+Compilation complete. 0 Errors, 0 Warnings, 1 Remarks, 1 Optimizations
 cp DSDT.aml "/Volumes/EFI/EFI/CLOVER/ACPI/patched/DSDT.aml"
 ```
 
