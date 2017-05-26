@@ -1,6 +1,6 @@
 			Device (LPCB)
 			{
-				Name (_ADR, 0x001F0000)	// _ADR: Address
+				Name (_ADR, 0x001F0000)  // _ADR: Address
 				OperationRegion (SMIE, SystemIO, PMBS, 0x04)
 				Field (SMIE, ByteAcc, NoLock, Preserve)
 				{
@@ -43,8 +43,8 @@
 
 				Device (DMAC)
 				{
-					Name (_HID, EisaId ("PNP0200"))	// _HID: Hardware ID
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_HID, EisaId ("PNP0200"))  // _HID: Hardware ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						IO (Decode16, 0x0000, 0x0000, 0x01, 0x20, )
 						IO (Decode16, 0x0081, 0x0081, 0x01, 0x11, )
@@ -55,10 +55,26 @@
 					})
 				}
 
+				Device (EC)
+				{
+					Name (_HID, EisaId ("PNP0C09"))  // _HID: Hardware ID
+					Name (_UID, Zero)  // _UID: Unique ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+					{
+						IO (Decode16, 0x0062, 0x0062, 0x00, 0x01, )
+						IO (Decode16, 0x0066, 0x0066, 0x00, 0x01, )
+					})
+
+					Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+					{
+						0x23, 0x04
+					})
+				}
+
 				Device (FWHD)
 				{
-					Name (_HID, EisaId ("INT0800"))	// _HID: Hardware ID
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_HID, EisaId ("INT0800"))  // _HID: Hardware ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						Memory32Fixed (ReadOnly, 0xFF000000, 0x01000000, )
 					})
@@ -66,10 +82,10 @@
 
 				Device (HPET)
 				{
-					Name (_HID, EisaId ("PNP0103"))	// _HID: Hardware ID
-					Name (_UID, Zero)	// _UID: Unique ID
+					Name (_HID, EisaId ("PNP0103"))  // _HID: Hardware ID
+					Name (_UID, Zero)  // _UID: Unique ID
 					Name (_STA, 0x0F)
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						Memory32Fixed (ReadWrite, 0xFED00000, 0x00000400 )
 						IRQNoFlags ()
@@ -81,8 +97,8 @@
 
 				Device (IPIC)
 				{
-					Name (_HID, EisaId ("PNP0000"))	// _HID: Hardware ID
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_HID, EisaId ("PNP0000"))  // _HID: Hardware ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						IO (Decode16, 0x0020, 0x0020, 0x01, 0x02, )
 						IO (Decode16, 0x0024, 0x0024, 0x01, 0x02, )
@@ -108,8 +124,8 @@
 
 				Device (MATH)
 				{
-					Name (_HID, EisaId ("PNP0C04"))	// _HID: Hardware ID
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_HID, EisaId ("PNP0C04"))  // _HID: Hardware ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						IO (Decode16, 0x00F0, 0x00F0, 0x01, 0x01, )
 						IRQNoFlags ()
@@ -119,8 +135,8 @@
 
 				Device (LDRC)
 				{
-					Name (_HID, EisaId ("PNP0C02"))	// _HID: Hardware ID
-					Name (_UID, 0x02)	// _UID: Unique ID
+					Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+					Name (_UID, 0x02)  // _UID: Unique ID
 					Name (_CRS, ResourceTemplate ()
 					{
 						IO (Decode16, 0x002E, 0x002E, 0x01, 0x02, )
@@ -148,8 +164,8 @@
 
 				Device (RTC)
 				{
-					Name (_HID, EisaId ("PNP0B00"))	// _HID: Hardware ID
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_HID, EisaId ("PNP0B00"))  // _HID: Hardware ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						IO (Decode16, 0x0070, 0x0070, 0x01, 0x08, )
 						IRQNoFlags ()
@@ -159,8 +175,8 @@
 
 				Device (TIMR)
 				{
-					Name (_HID, EisaId ("PNP0100"))	// _HID: Hardware ID
-					Name (_CRS, ResourceTemplate ()	// _CRS: Current Resource Settings
+					Name (_HID, EisaId ("PNP0100"))  // _HID: Hardware ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
 					{
 						IO (Decode16, 0x0040, 0x0040, 0x01, 0x04, )
 						IO (Decode16, 0x0050, 0x0050, 0x10, 0x04, )
