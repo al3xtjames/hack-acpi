@@ -48,57 +48,54 @@
 					Device (PRT1)
 					{
 						Name (_ADR, One)  // _ADR: Address
-						Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
-						{
-							0xFF, 0xFF, Zero, Zero
-						})
+						Alias (UPIN, _UPC)  // _UPC: USB Port Capabilities
 
 						Device (PRT1)
 						{
 							Name (_ADR, One)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT2)
 						{
 							Name (_ADR, 0x02)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT3)
 						{
 							Name (_ADR, 0x03)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT4)
 						{
 							Name (_ADR, 0x04)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT5)
 						{
 							Name (_ADR, 0x05)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT6)
 						{
 							Name (_ADR, 0x06)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT7)
 						{
 							Name (_ADR, 0x07)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT8)
 						{
 							Name (_ADR, 0x08)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 					}
 				}
@@ -132,37 +129,37 @@
 						Device (PRT1)
 						{
 							Name (_ADR, One)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT2)
 						{
 							Name (_ADR, 0x02)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT3)
 						{
 							Name (_ADR, 0x03)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT4)
 						{
 							Name (_ADR, 0x04)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT5)
 						{
 							Name (_ADR, 0x05)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 
 						Device (PRT6)
 						{
 							Name (_ADR, 0x06)  // _ADR: Address
-							Alias (_UPC, UPC)  // _UPC: USB Port Capabilities
+							Alias (UP2A, _UPC)  // _UPC: USB Port Capabilities
 						}
 					}
 				}

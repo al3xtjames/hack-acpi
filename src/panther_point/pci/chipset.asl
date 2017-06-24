@@ -102,6 +102,24 @@
 				0x0D, 0x04
 			})
 
+			// _UPC for USB 2 Type-A ports
+			Name (UP2A, Package (0x04)
+			{
+				0xFF, Zero, Zero, Zero
+			})
+
+			// _UPC for USB 3 Type-A ports
+			Name (UP3A, Package (0x04)
+			{
+				0xFF, 0x03, Zero, Zero
+			})
+
+			// _UPC for proprietary (internal) USB ports
+			Name (UPIN, Package (0x04)
+			{
+				0xFF, 0xFF, Zero, Zero
+			})
+
 			#include <panther_point/pci/mchc.asl>
 			#include <panther_point/pci/imei.asl>
 #if CONFIG_GRAPHICS_IGPU_SUPPORT == 1

@@ -25,52 +25,49 @@
 					Device (HS01)
 					{
 						Name (_ADR, One)  // _ADR: Address
-						Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
-						{
-							0xFF, 0x03, Zero, Zero
-						})
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (HS02)
 					{
 						Name (_ADR, 0x02)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (HS03)
 					{
 						Name (_ADR, 0x03)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (HS04)
 					{
 						Name (_ADR, 0x04)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (SSP1)
 					{
 						Name (_ADR, 0x05)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (SSP2)
 					{
 						Name (_ADR, 0x06)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (SSP3)
 					{
 						Name (_ADR, 0x07)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 
 					Device (SSP4)
 					{
 						Name (_ADR, 0x08)  // _ADR: Address
-						Alias (^HS01._UPC, _UPC)  // _UPC: USB Port Capabilities
+						Alias (UP3A, _UPC)  // _UPC: USB Port Capabilities
 					}
 				}
 			}
