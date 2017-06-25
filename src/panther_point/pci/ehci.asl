@@ -105,6 +105,8 @@
 			{
 				Name (_ADR, 0x001A0000)  // _ADR: Address
 				Alias (PWD4, _PRW)  // _PRW: Power Resources for Wake
+				Name (_S3D, 0x03)  // _S3D: S3 Device State
+				Name (_S4D, 0x03)  // _S4D: S4 Device State
 				Name (MBSD, One)  // Enable USB SuperDrive support
 #if CONFIG_ACPI_DSM_INJECTION == 1
 				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method

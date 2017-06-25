@@ -14,13 +14,6 @@
 				{
 					Name (_ADR, Zero)  // _ADR: Address
 					Alias (PW94, _PRW)  // _PRW: Power Resources for Wake
-					OperationRegion (PEGH, PCI_Config, Zero, 0x40)
-					Field (PEGH, ByteAcc, NoLock, Preserve)
-					{
-						VID,	16,
-						DID,	16
-					}
-
 #if CONFIG_ACPI_DSM_INJECTION == 1
 					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 					{
@@ -96,13 +89,6 @@
 				{
 					Name (_ADR, Zero)  // _ADR: Address
 					Alias (PW94, _PRW)  // _PRW: Power Resources for Wake
-					OperationRegion (PEGH, PCI_Config, Zero, 0x40)
-					Field (PEGH, ByteAcc, NoLock, Preserve)
-					{
-						VID,	16,
-						DID,	16
-					}
-
 #if CONFIG_ACPI_DSM_INJECTION == 1
 					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 					{
