@@ -18,9 +18,10 @@
 
 #define CONFIG_USB_CURRENT_DESKTOP       0x01
 
-DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170421)
+DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 {
 	#include <panther_point/operation_regions.asl>
+	#include <panther_point/cpu.asl>
 
 	Scope (_SB)
 	{
@@ -101,6 +102,5 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x02, "APPLE ", "iMac", 0x20170421)
 		}
 	}
 
-	#include <panther_point/cpu.asl>
 	#include <common/sleep.asl>
 }

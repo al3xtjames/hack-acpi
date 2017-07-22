@@ -7,7 +7,7 @@
 
 // Enable or disable Apple CPU PM plugin-type injection.
 /// Disable this (set to 0x00) if a CPU PM SSDT is used.
-#define CONFIG_ACPI_CPU_PM          0x01
+#define CONFIG_ACPI_CPU_PM          0x00
 
 // Enable or disable device property injection from _DSM methods.
 /// Disable this (set to 0x00) to further strip the DSDT.
