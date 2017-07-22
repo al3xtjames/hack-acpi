@@ -2,6 +2,7 @@
 	{
 		Processor (CPU0, 0x01, 0x00000410, 0x06)
 		{
+			// CONFIG_ACPI_CPU_PM is disabled by default for Panther Point
 #if CONFIG_ACPI_CPU_PM == 1
 			// This _DSM method is not optional if CONFIG_ACPI_CPU_PM is enabled
 			Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
