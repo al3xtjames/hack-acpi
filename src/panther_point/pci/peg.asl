@@ -22,28 +22,16 @@
 							Return (Buffer (One) { 0x03 })
 						}
 
-						Return (Package (0x12)
+						Return (Package ()
 						{
 							"AAPL,boot-display",
 							Buffer (Zero) {},
 							"AAPL,slot-name",
 #ifdef CONFIG_PCI_PEG0_SLOT_NAME
-							Buffer (0x07) { CONFIG_PCI_PEG0_SLOT_NAME },
+							Buffer () { CONFIG_PCI_PEG0_SLOT_NAME },
 #else
 							Buffer (0x07) { "Slot-1" },
 #endif
-							"@0,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@1,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@2,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@3,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@4,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@5,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
 							"hda-gfx",
 							Buffer (0x0A) { "onboard-2" }
 						})
@@ -97,28 +85,16 @@
 							Return (Buffer (One) { 0x03 })
 						}
 
-						Return (Package (0x12)
+						Return (Package ()
 						{
 							"AAPL,boot-display",
 							Buffer (Zero) {},
 							"AAPL,slot-name",
 #ifdef CONFIG_PCI_PEG1_SLOT_NAME
-							Buffer (0x07) { CONFIG_PCI_PEG1_SLOT_NAME },
+							Buffer () { CONFIG_PCI_PEG1_SLOT_NAME },
 #else
 							Buffer (0x07) { "Slot-2" },
 #endif
-							"@0,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@1,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@2,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@3,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@4,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
-							"@5,connector-type",
-							Buffer (0x04) { 0x00, 0x08, Zero, Zero },
 							"hda-gfx",
 							Buffer (0x0A) { "onboard-3" }
 						})
