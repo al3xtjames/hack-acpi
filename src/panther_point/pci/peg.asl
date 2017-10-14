@@ -42,21 +42,6 @@
 				Device (HDAU)  // Optional, HDMI audio for PCIe GPU
 				{
 					Name (_ADR, One)  // _ADR: Address
-#if CONFIG_ACPI_DSM_INJECTION == 1
-					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-					{
-						If (!Arg2)
-						{
-							Return (Buffer (One) { 0x03 })
-						}
-
-						Return (Package (0x02)
-						{
-							"hda-gfx",
-							Buffer (0x0A) { "onboard-2" }
-						})
-					}
-#endif
 				}
 			}
 
@@ -105,21 +90,6 @@
 				Device (HDAU)  // Optional, HDMI audio for PCIe GPU
 				{
 					Name (_ADR, One)  // _ADR: Address
-#if CONFIG_ACPI_DSM_INJECTION == 1
-					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-					{
-						If (!Arg2)
-						{
-							Return (Buffer (One) { 0x03 })
-						}
-
-						Return (Package (0x02)
-						{
-							"hda-gfx",
-							Buffer (0x0A) { "onboard-3" }
-						})
-					}
-#endif
 				}
 			}
 #endif
