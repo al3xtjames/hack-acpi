@@ -17,14 +17,20 @@ function mount_efi()
 
 	# Make sure the EFI partition actually exists
 	if [ -z "$efiVolume" ]; then
-		## Check if the root volume is a Core Storage (CS) logical volume
+		local apfsVolume=$(diskutil info "$rootVolume" | grep "APFS")
 		local csVolume=$(diskutil info "$rootVolume" | grep "Core Storage")
-		if [ ! -z "$csVolume" ]; then ## CS volume detected
-			## We can find the recovery volume in the diskutil output, and then use that to find the EFI partition
+		## Check if the root volume is an APFS volume
+		if [ ! -z "$apfsVolume" ]; then ## APFS volume detected
+			## Find the physical store in the diskutil output, and use that to find the EFI partition
+			local physicalStore=$(diskutil list "$rootVolume" | awk '/Physical Store/ {print $3}')
+			local efiVolume=$(diskutil list "$physicalStore" | awk '/EFI/ {print $6}')
+		## Check if the root volume is a Core Storage (CS) logical volume
+		elif [ ! -z "$csVolume" ]; then ## CS logical volume detected
+			## Find the recovery volume in the diskutil output, and use that to find the EFI partition
 			local recoveryVolume=$(diskutil info "$rootVolume" | awk '/Recovery Disk:/ {print $3}')
 			local efiVolume=$(diskutil list "$recoveryVolume" | awk '/EFI/ {print $6}')
 		else ## No CS volume present, so assume no EFI partition
-			echo "No EFI partition present on root volume ($rootVolume)!" && exit 1
+			echo "No EFI system partition found on root volume ($rootVolume)." && exit 1
 		fi
 	fi
 
