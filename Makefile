@@ -9,18 +9,18 @@ endif
 
 IASLFLAGS := -I build -I src -vo -p out/DSDT.aml
 
-all : src/board/$(BOARD).asl
+all: src/board/$(BOARD).asl
 	build/tools/gen_config
 	$(IASL) $(IASLFLAGS) $<
 
 .PHONY: install
-install : all
+install: all
 	cp out/DSDT.aml "$(EFI_MOUNT)/EFI/CLOVER/ACPI/patched/DSDT.aml"
 
 .PHONY: cleanall
-cleanall : clean
+cleanall: clean
 	$(RM) build/build_config.asl
 
 .PHONY: clean
-clean :
+clean:
 	$(RM) out/DSDT.aml

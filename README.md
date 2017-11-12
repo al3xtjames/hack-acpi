@@ -1,5 +1,6 @@
 # Hackintosh ACPI
-Stripped DSDTs for running macOS on various motherboards.
+Stripped DSDTs for running macOS on various motherboards, [based off Pike R. Alpha's
+ACPI table examples](https://github.com/Piker-Alpha/DSDT).
 
 ### Supported motherboards
  - ASUS P8Z77-V PRO/Thunderbolt *(Thunderbolt support WIP, untested)*
@@ -12,7 +13,7 @@ Stripped DSDTs for running macOS on various motherboards.
 Build a DSDT using `BOARD=target make`:
 
 ```
-hack-acpi ❯ BOARD=Gigabyte/GA-Z77X-UD5H make
+$ BOARD=Gigabyte/GA-Z77X-UD5H make
 ./build/tools/gen_config
 build/tools/iasl_darwin -I build -I src -vo -p out/DSDT.aml src/board/Gigabyte/GA-Z77X-UD5H.asl
 
