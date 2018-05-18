@@ -59,6 +59,13 @@
 				{
 					Name (_HID, EisaId ("PNP0C09"))  // _HID: Hardware ID
 					Name (_UID, Zero)  // _UID: Unique ID
+					Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+					{
+						IO (Decode16, 0x0062, 0x0062, 0x00, 0x01, )
+						IO (Decode16, 0x0066, 0x0066, 0x00, 0x01, )
+					})
+
+					Name (_GPE, 0x17)  // _GPE: General Purpose Events
 				}
 
 				Device (FWHD)
