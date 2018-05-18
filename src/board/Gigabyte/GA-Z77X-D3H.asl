@@ -9,8 +9,8 @@
 #define CONFIG_GRAPHICS_IGPU_SUPPORT           0x01
 #define CONFIG_GRAPHICS_PCIE_SUPPORT           0x02
 
-#define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-1"
-#define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-4"
+#define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-2"
+#define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-5"
 
 DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 {
