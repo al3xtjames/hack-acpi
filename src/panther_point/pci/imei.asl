@@ -22,6 +22,6 @@
 
 					Return (Package (Zero) {})
 				}
-#endif
-#endif
+#endif // CONFIG_GRAPHICS_IGPU_SUPPORT
+#endif // CONFIG_ACPI_DSM_INJECTION
 			}

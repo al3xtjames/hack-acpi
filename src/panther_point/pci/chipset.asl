@@ -55,21 +55,21 @@
 				Package (0x04) { 0x0001FFFF,  One, Zero, 0x11 }, // PEGn
 				Package (0x04) { 0x0001FFFF, 0x02, Zero, 0x12 }, // PEGn
 				Package (0x04) { 0x0001FFFF, 0x03, Zero, 0x13 }, // PEGn
-#endif
+#endif // CONFIG_GRAPHICS_PCIE_SUPPORT
 				Package (0x04) { 0x0006FFFF, Zero, Zero, 0x13 },
 				Package (0x04) { 0x0006FFFF,  One, Zero, 0x10 },
 				Package (0x04) { 0x0006FFFF, 0x02, Zero, 0x11 },
 				Package (0x04) { 0x0006FFFF, 0x03, Zero, 0x12 },
 #if CONFIG_GRAPHICS_IGPU_SUPPORT == 1
 				Package (0x04) { 0x0002FFFF, Zero, Zero, 0x10 }, // IGPU
-#endif
+#endif // CONFIG_GRAPHICS_IGPU_SUPPORT
 				Package (0x04) { 0x0004FFFF, Zero, Zero, 0x10 },
 				Package (0x04) { 0x0004FFFF,  One, Zero, 0x11 },
 				Package (0x04) { 0x0004FFFF, 0x02, Zero, 0x12 },
 				Package (0x04) { 0x0004FFFF, 0x03, Zero, 0x13 },
 #ifdef CONFIG_CHIPSET_INTEL_LAN_DEVICE
 				Package (0x04) { 0x0019FFFF, Zero, Zero, 0x14 }	 // GIGE
-#endif
+#endif // CONFIG_CHIPSET_INTEL_LAN_DEVICE
 			})
 
 			Device (PDRC)
@@ -124,21 +124,21 @@
 			#include <panther_point/pci/imei.asl>
 #if CONFIG_GRAPHICS_IGPU_SUPPORT == 1
 			#include <panther_point/pci/igpu.asl>
-#endif
+#endif // CONFIG_GRAPHICS_IGPU_SUPPORT
 
 #if CONFIG_GRAPHICS_PCIE_SUPPORT > 0
 			#include <panther_point/pci/peg.asl>
-#endif
+#endif // CONFIG_GRAPHICS_PCIE_SUPPORT
 
 			#include <panther_point/pci/ehci.asl>
 #ifdef CONFIG_CHIPSET_INTEL_XHC_DEVICE
 			#include <panther_point/pci/xhci.asl>
-#endif
+#endif // CONFIG_CHIPSET_INTEL_XHC_DEVICE
 			#include <panther_point/pci/hdef.asl>
 
 #ifdef CONFIG_CHIPSET_INTEL_LAN_DEVICE
 			#include <panther_point/pci/intel_lan.asl>
-#endif
+#endif // CONFIG_CHIPSET_INTEL_LAN_DEVICE
 
 			#include <panther_point/pci/sata.asl>
 			#include <panther_point/lpcb.asl>

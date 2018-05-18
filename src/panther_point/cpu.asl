@@ -17,7 +17,7 @@
 					"plugin-type", One
 				})
 			}
-#endif
+#endif // CONFIG_ACPI_CPU_PM
 		}
 
 		Processor (CPU1, 0x02, 0x00000410, 0x06) {}
@@ -31,6 +31,6 @@
 		Processor (CPU5, 0x06, 0x00001810, 0x06) {}
 		Processor (CPU6, 0x07, 0x00001810, 0x06) {}
 		Processor (CPU7, 0x08, 0x00001810, 0x06) {}
-#endif
-#endif
+#endif // CONFIG_ACPI_CPUS
+#endif // CONFIG_ACPI_CPUS
 }

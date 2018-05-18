@@ -19,5 +19,5 @@
 					"type", 0x49324300
 				})
 			}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 		}

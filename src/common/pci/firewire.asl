@@ -22,6 +22,6 @@
 								Buffer (0x04) { One, Zero, Zero, Zero }
 							})
 						}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 					}
 				}

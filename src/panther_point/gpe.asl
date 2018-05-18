@@ -9,11 +9,11 @@
 			Notify (\_SB.PCI0.EHC2, 0x02)
 #ifdef CONFIG_CHIPSET_INTEL_XHC_DEVICE
 			Notify (CONFIG_CHIPSET_INTEL_XHC_DEVICE, 0x02)
-#endif
+#endif // CONFIG_CHIPSET_INTEL_XHC_DEVICE
 			Notify (\_SB.PCI0.HDEF, 0x02)
 #ifdef CONFIG_CHIPSET_INTEL_LAN_DEVICE
 			Notify (CONFIG_CHIPSET_INTEL_LAN_DEVICE, 0x02)
-#endif
+#endif // CONFIG_CHIPSET_INTEL_LAN_DEVICE
 		}
 
 		Method (_L1D, 0, NotSerialized)	// _Lxx: Level-Triggered GPE

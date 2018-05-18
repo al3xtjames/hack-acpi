@@ -16,7 +16,7 @@
 							One
 						})
 					}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 
 					Name (_RMV, One)  // _RMV: Removal Status
 
@@ -37,7 +37,7 @@
 								Zero
 							})
 						}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 
 						Device (NHI0)
 						{

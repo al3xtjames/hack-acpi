@@ -39,7 +39,7 @@
 					Name (_HID, "ACPI0008")  // _HID: Hardware ID
 					Name (_STA, 0x0F)  // _STA: Status
 				}
-#endif
+#endif // CONFIG_ACPI_IMAC_DEVICES
 
 				Device (DMAC)
 				{

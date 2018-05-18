@@ -1,11 +1,11 @@
 			Device (SBUS)
 			{
 				Name (_ADR, 0x001F0003)  // _ADR: Address
+#if CONFIG_ACPI_IMAC_DEVICES == 1
 				Device (BUS0)
 				{
 					Name (_ADR, Zero)  // _ADR: Address
 					Name (_CID, "smbus")  // _CID: Compatible ID
-#if CONFIG_ACPI_IMAC_DEVICES
 					Device (BLC0)
 					{
 						Name (_ADR, Zero)  // _ADR: Address
@@ -27,9 +27,8 @@
 								"type", 0x49324300
 							})
 						}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 					}
-#endif
 				}
 
 				Device (BUS1)
@@ -37,4 +36,5 @@
 					Name (_ADR, One)  // _ADR: Address
 					Name (_CID, "smbus")  // _CID: Compatible ID
 				}
+#endif // CONFIG_ACPI_IMAC_DEVICES
 			}

@@ -31,12 +31,12 @@
 							Buffer () { CONFIG_PCI_PEG0_SLOT_NAME },
 #else
 							Buffer (0x07) { "Slot-1" },
-#endif
+#endif // CONFIG_PCI_PEG0_SLOT_NAME
 							"hda-gfx",
 							Buffer (0x0A) { "onboard-2" }
 						})
 					}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 				}
 
 				Device (HDAU)  // Optional, HDMI audio for PCIe GPU
@@ -79,12 +79,12 @@
 							Buffer () { CONFIG_PCI_PEG1_SLOT_NAME },
 #else
 							Buffer (0x07) { "Slot-2" },
-#endif
+#endif // CONFIG_PCI_PEG1_SLOT_NAME
 							"hda-gfx",
 							Buffer (0x0A) { "onboard-3" }
 						})
 					}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 				}
 
 				Device (HDAU)  // Optional, HDMI audio for PCIe GPU
@@ -92,4 +92,4 @@
 					Name (_ADR, One)  // _ADR: Address
 				}
 			}
-#endif
+#endif // CONFIG_GRAPHICS_PCIE_SUPPORT

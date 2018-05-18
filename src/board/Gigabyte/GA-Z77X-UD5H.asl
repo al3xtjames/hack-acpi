@@ -89,7 +89,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 							Buffer (0x02) { "1" }
 						})
 					}
-#endif
+#endif // CONFIG_ACPI_DSM_INJECTION
 				}
 			}
 
@@ -105,7 +105,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 
 #if CONFIG_ACPI_IMAC_DEVICES == 1
 		#include <panther_point/pnlf.asl>
-#endif
+#endif // CONFIG_ACPI_IMAC_DEVICES
 		#include <common/pwrb.asl>
 	}
 

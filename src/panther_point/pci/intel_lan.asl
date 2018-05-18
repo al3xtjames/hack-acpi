@@ -17,6 +17,6 @@
 						Buffer (0x02) { CONFIG_CHIPSET_INTEL_LAN_DSM_LOCATION }
 					})
 				}
-#endif
-#endif
+#endif // CONFIG_CHIPSET_INTEL_LAN_DSM_LOCATION
+#endif // CONFIG_ACPI_DSM_INJECTION
 			}
