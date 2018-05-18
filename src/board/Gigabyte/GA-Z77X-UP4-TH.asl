@@ -12,8 +12,6 @@
 #define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-2"
 #define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-5"
 
-#define CONFIG_USB_CURRENT_DESKTOP             0x01
-
 DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 {
 	#include <panther_point/operation_regions.asl>
@@ -54,20 +52,6 @@ DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 				Device (XHC2)
 				{
 					#include <panther_point/pci/pxsx.asl>
-#if CONFIG_ACPI_DSM_INJECTION == 1
-					Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-					{
-						If (!Arg2)
-						{
-							Return (Buffer (One) { 0x03 })
-						}
-
-						// Set AAPL,device-internal to Zero for XHC2
-						^^^EHC1.USBP[0x07] = Zero
-						// Return pointer to USB device properties
-						Return (RefOf (^^^EHC1.USBP))
-					}
-#endif
 				}
 			}
 

@@ -12,8 +12,6 @@
 #define CONFIG_PCI_PEG0_SLOT_NAME              "Slot-1"
 #define CONFIG_PCI_PEG1_SLOT_NAME              "Slot-4"
 
-#define CONFIG_USB_CURRENT_DESKTOP             0x01
-
 DefinitionBlock ("DSDT.aml", "DSDT", 0x03, "APPLE ", "iMac", 0x20170721)
 {
 	#include <panther_point/operation_regions.asl>

@@ -3,22 +3,6 @@
 				Name (_ADR, 0x00140000)  // _ADR: Address
 				Alias (PWD4, _PRW)  // _PRW: Power Resources for Wake
 				Name (MBSD, One)  // Enable USB SuperDrive support
-
-#if CONFIG_ACPI_DSM_INJECTION == 1
-				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-				{
-					If (!Arg2)
-					{
-						Return (Buffer (One) { 0x03 })
-					}
-
-					// Set AAPL,device-internal to Zero for XHC1
-					^^EHC1.USBP[0x07] = Zero
-					// Return pointer to USB device properties
-					Return (RefOf (^^EHC1.USBP))
-				}
-#endif
-
 				Device (RHUB)
 				{
 					Name (_ADR, Zero)  // _ADR: Address

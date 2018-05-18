@@ -5,43 +5,6 @@
 				Name (_S3D, 0x03)  // _S3D: S3 Device State
 				Name (_S4D, 0x03)  // _S4D: S4 Device State
 				Name (MBSD, One)  // Enable USB SuperDrive support
-#if CONFIG_ACPI_DSM_INJECTION == 1
-#if CONFIG_USB_CURRENT_DESKTOP == 1
-				Name (USBP, Package (0x0B)  // USB device properties
-				{
-					"AAPL,current-available", 0x0834,
-					"AAPL,current-extra", 0x0A8C,
-					"AAPL,current-extra-in-sleep", 0x0A8C,
-					"AAPL,device-internal",	0x02,
-					"AAPL,max-port-current-in-sleep", 0x0834,
-					Buffer (One) { Zero }
-				})
-#elif CONFIG_USB_CURRENT_LAPTOP == 1
-				Name (USBP, Package (0x0B)  // USB device properties
-				{
-					"AAPL,current-available", 0x0834,
-					"AAPL,current-extra", 0x0898,
-					"AAPL,current-extra-in-sleep", 0x0640,
-					"AAPL,device-internal",	0x02,
-					"AAPL,max-port-current-in-sleep", 0x0834,
-					Buffer (One) { Zero }
-				})
-#endif
-#endif
-
-#if CONFIG_ACPI_DSM_INJECTION == 1
-				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-				{
-					If (!Arg2)
-					{
-						Return (Buffer (One) { 0x03 })
-					}
-
-					// Return pointer to USB device properties
-					Return (RefOf (USBP))
-				}
-#endif
-
 				Device (RHUB)
 				{
 					Name (_ADR, Zero)  // _ADR: Address
@@ -108,19 +71,6 @@
 				Name (_S3D, 0x03)  // _S3D: S3 Device State
 				Name (_S4D, 0x03)  // _S4D: S4 Device State
 				Name (MBSD, One)  // Enable USB SuperDrive support
-#if CONFIG_ACPI_DSM_INJECTION == 1
-				Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-				{
-					If (!Arg2)
-					{
-						Return (Buffer (One) { 0x03 })
-					}
-
-					// Return pointer to USB device properties
-					Return (RefOf (^^EHC1.USBP))
-				}
-#endif
-
 				Device (RHUB)
 				{
 					Name (_ADR, Zero)  // _ADR: Address
